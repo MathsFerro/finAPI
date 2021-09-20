@@ -141,8 +141,17 @@ app.get("/accounts", (req, resp) => {
 
 app.delete("/account", verifyIfExistAccountCPF, (req, resp) => {
   const { customer } = req;
-  customers.splice(customer, 1);
+
+  customers.splice(customers.indexOf(customer), 1);
+
   return resp.status(200).json(customers);
+})
+
+app.get("/balance", verifyIfExistAccountCPF, (req, resp) => {
+  const { customer } = req;
+  const balance = getBalance(customer.statement);  
+  
+  resp.json(balance);
 })
 
 app.listen(3333);
