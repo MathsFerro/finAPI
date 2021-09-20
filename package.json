@@ -12,5 +12,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
-  }
+  },
+  "repository": "https://github.com/MathsFerro/finAPI.git",
+  "author": "Matheus Ferro <matheusferroraimundo@gmail.com>"
 }
